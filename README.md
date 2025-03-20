@@ -18,7 +18,7 @@ Our recommendation is to store both variables as secrets in your repository.
 ## Example Usage
 
 ```yaml
-- uses: open-chat-labs/github-bot-action@v1
+- uses: open-chat-labs/github_bot_action@v1.0.0
   with:
     OC_BOT_URL: ${{ secrets.OC_BOT_URL }}
     OC_API_KEY: ${{ secrets.OC_API_KEY }}
