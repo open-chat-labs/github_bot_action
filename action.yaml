@@ -9,6 +9,7 @@ inputs:
     required: true
 runs:
   using: "bash"
+  shell: "bash"
   steps:
     - name: Post PR data
       run: |
