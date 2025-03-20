@@ -1,5 +1,5 @@
 name: "OpenChat GitHub Bot Action"
-description: "A GitHub Action to post PR data to the OpenChat github bot."
+description: "A GitHub Action to post PR data to the OpenChat GitHub bot."
 inputs:
   OC_BOT_URL:
     description: "The URL of the bot endpoint."
@@ -8,10 +8,10 @@ inputs:
     description: "The API key which encodes the group or channel to post the update to."
     required: true
 runs:
-  using: "bash"
-  shell: "bash"
+  using: "composite"
   steps:
     - name: Post PR data
+      shell: bash
       run: |
         PR_TITLE="${{ github.event.pull_request.title }}"
         PR_URL="${{ github.event.pull_request.html_url }}"
