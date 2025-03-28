@@ -18,8 +18,11 @@ runs:
         PR_AUTHOR="${{ github.event.pull_request.user.login }}"
         REPO_TITLE="${{ github.event.repository.name }}"
 
+        # Escape special characters in PR_TITLE
+        ESCAPED_PR_TITLE=$(printf '%q' "$PR_TITLE")
+
         DATA=$(jq -n \
-          --arg title "$PR_TITLE" \
+          --arg title "$ESCAPED_PR_TITLE" \
           --arg url "$PR_URL" \
           --arg author "$PR_AUTHOR" \
           --arg repo "$REPO_TITLE" \
