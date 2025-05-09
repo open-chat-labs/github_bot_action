@@ -1,4 +1,4 @@
-# OpenChat GitHub Bot Action
+# OpenChat GitHub Webhook Action
 
 A GitHub Action to post PR data to an OpenChat webhook.
 
@@ -15,7 +15,7 @@ Our recommendation is to store url as a secret in your repository.
 ## Example Usage
 
 ```yaml
-- uses: open-chat-labs/github_bot_action@v1.0.0
+- uses: open-chat-labs/github_webhook_action@v1.0.7
   with:
     OC_WEBHOOK_URL: ${{ secrets.OC_WEBHOOK_URL }}
 ```
