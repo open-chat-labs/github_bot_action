@@ -28,10 +28,9 @@ runs:
           --arg repo "$REPO_TITLE" \
           '{title: $title, url: $url, author: $author, repo: $repo}')
 
-        echo "Posting to URL: ${{ inputs.OC_BOT_URL }}"
+        echo "Posting to URL: ${{ inputs.OC_WEBHOOK_URL }}"
         echo "Data: $DATA"
 
-        curl -X POST "${{ inputs.OC_BOT_URL }}" \
+        curl -X POST "${{ inputs.OC_WEBHOOK_URL }}" \
           -H "Content-Type: application/json" \
-          -H "x-api-key: ${{ inputs.OC_API_KEY }}" \
           -d "$DATA"
